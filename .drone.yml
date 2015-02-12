@@ -1,4 +1,4 @@
-image: registry.docker/debian
+image: registry.docker/buildpack-deps:scm
 volumes:
   - /var/run/docker.sock
 script:
