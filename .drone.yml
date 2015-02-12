@@ -3,4 +3,9 @@ volumes:
   - /var/run/docker.sock
 script:
   - docker build -t registry.docker/buildpack-deps:jessie-curl jessie/curl
-  - docker push registry.docker/buildpack-deps:jessie-curl
+  - docker tag -f registry.docker/buildpack-deps:jessie-curl registry.docker/buildpack-deps:curl 
+  - docker build -t registry.docker/buildpack-deps:jessie-scm jessie/scm
+  - docker tag -f registry.docker/buildpack-deps:jessie-scm registry.docker/buildpack-deps:scm
+  - docker build -t registry.docker/buildpack-deps:jessie jessie
+  - docker tag -f registry.docker/buildpack-deps:jessie registry.docker/buildpack-deps:latest
+  - docker push registry.docker/buildpack-deps
