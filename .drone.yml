@@ -8,4 +8,10 @@ script:
   - docker tag -f registry.docker/buildpack-deps:jessie-scm registry.docker/buildpack-deps:scm
   - docker build -t registry.docker/buildpack-deps:jessie jessie
   - docker tag -f registry.docker/buildpack-deps:jessie registry.docker/buildpack-deps:latest
+  - docker build -t registry.docker/buildpack-deps:sid-curl sid/curl
+  - docker build -t registry.docker/buildpack-deps:sid-scm sid/scm
+  - docker build -t registry.docker/buildpack-deps:sid sid
+  - docker build -t registry.docker/buildpack-deps:wheezy-curl wheezy/curl
+  - docker build -t registry.docker/buildpack-deps:wheezy-scm wheezy/scm
+  - docker build -t registry.docker/buildpack-deps:wheezy wheezy
   - docker push registry.docker/buildpack-deps
